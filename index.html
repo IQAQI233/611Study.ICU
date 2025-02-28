@@ -7,6 +7,7 @@
     <link rel="icon" href="/logo.svg" type="image/svg+xml">
     <style>
         body {
+            scroll-behavior: smooth;
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -28,10 +29,38 @@
                 margin: 0 0;
             }
         }
+        .head-animation{
+            background-color: #de335e; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            animation: fade-out 1.75s ease-in-out forwards;
+            z-index: 3;
+        }
+
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+                display: none;
+            }
+        }
 
         header {
             margin: 20px 0;
-        }
+        } 
 
         img.header-image {
             width: 70%; /* 自适应宽度 */
@@ -95,10 +124,24 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body>
+    <div class="head-animation">
+        <img src="logo.svg" alt="611Study.ICU" class="header-image">
+    </div>
     <header>
         <img src="logo.svg" alt="611Study.ICU" class="header-image">
         <h1>611Study.ICU</h1>
     </header>
+    <script>
+        var AnimationHeadElement=document.querySelector(".head-animation") 
+        var HeadElement=document.querySelector("header > h1") 
+        AnimationHeadElement.addEventListener('animationend', () => {
+            window.scrollTo({
+                top: HeadElement.offsetTop, 
+                left: 0, 
+                behavior: "smooth"
+            })
+        });
+    </script>
 
     <h4>本项目由 <a href="https://www.li-dao.org" target="_blank">$Li币团队</a>运营</h4>
     <p>$LI 希望建设一个独一无二的社区，我们致力于在中国这样的独裁国家中，促进人权、新闻自由与言论自由。$Li 的社区将伴随 $LI 的成长不断发展，凝聚共识，共同推动这些核心价值的实现。</p>
