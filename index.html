@@ -2,161 +2,240 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>611Study.ICU</title>
-    <meta name="description" content="611Study.ICU 是一个旨在揭示和抵制中国初高中学校普遍存在的“611”学制的项目。“611”学制指学生每天从早上6点到晚上11点，每周学习6至7天，总计每周至少学习102小时。这种高强度的学习安排对学生的身心健康造成了严重影响，导致许多学生出现心理和生理问题。">
-    <link rel="icon" href="/logo.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>611Study.ICU - 反对不合理学时</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'rgb(222, 51, 94)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 10%;
-            background-color: #de335e; /* 深红色背景 */
-            color: white;
-            text-align: center;
-            
+            font-family: 'Noto Sans SC', sans-serif;
         }
-        @media (min-aspect-ratio: 1/1){/*使用横屏比例下修改的参数*/
-            body{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 0 auto;
-                padding: 5%;
-            }
-            header h1{
-                margin: 0 0;
-            }
-        }
-
-        header {
-            margin: 20px 0;
-        }
-
-        img.header-image {
-            width: 70%; /* 自适应宽度 */
-            max-width: 800px;
-            height: auto;
-            margin: 5px auto;
-            display: block;
-        }
-
-        h1, h2, h3, h4 {
-            color: #FFD700; /* 金黄色标题 */
-        }
-
-        h2{
-            font-size: 50px;
-        }
-
-        h1{
-            font-size: 130px;
-        }
-
-        h4{
-            font-size: 36px;
-        }
-
-        a {
-            color: #87CEEB;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 5px 10px;
-            margin: 5px 0;
-            background-color: #FFD700;
-            color: #8B0000;
-            border-radius: 3px;
-            font-size: 14px;
-        }
-
-        ul {
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 28px;
-        }
-
-        p {
-            max-width: 800px;
-            margin: 10px auto;
-            font-size: 28px;
-        }
-
     </style>
-
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
-<body>
-    <header>
-        <img src="logo.svg" alt="611Study.ICU" class="header-image">
-        <h1>611Study.ICU</h1>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="https://611study.icu/logo.svg" alt="611Study.ICU" class="h-8 w-auto rounded-lg">
+                    <span class="ml-3 text-xl font-bold text-primary">611Study.ICU</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary">关于项目</a>
+                    <a href="#lists" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary">耻辱名单</a>
+                    <a href="#action" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary">行动起来</a>
+                    <a href="https://github.com/IQAQI233/611Study.ICU" class="px-3 py-2 rounded-md text-sm font-medium bg-primary text-white hover:bg-opacity-90">GitHub</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">关于项目</a>
+                <a href="#lists" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">耻辱名单</a>
+                <a href="#action" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">行动起来</a>
+                <a href="https://github.com/IQAQI233/611Study.ICU" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white hover:bg-opacity-90">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-primary to-pink-600 text-white pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">611Study.ICU</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">早6点上学，晚11点放学，生病ICU</p>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+                    无数的初高中生正在承受生理和心理健康的双重折磨。我们希望通过此项目，帮助中国学生们摆脱这种连监狱都不如的作息时间，拥有一个健康快乐的童年。
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <a href="https://forms.gle/n4w2Kb4hMtDxCTE18" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">
+                        填写学校登记问卷
+                    </a>
+                    <a href="https://github.com/IQAQI233/611Study.ICU" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition">
+                        GitHub 项目页面
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <h4>本项目由 <a href="https://www.li-dao.org" target="_blank">$Li币团队</a>运营</h4>
-    <p>$LI 希望建设一个独一无二的社区，我们致力于在中国这样的独裁国家中，促进人权、新闻自由与言论自由。$Li 的社区将伴随 $LI 的成长不断发展，凝聚共识，共同推动这些核心价值的实现。</p>
+    <!-- About Section -->
+    <section id="about" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">关于 611Study.ICU</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md mb-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">运营团队</h3>
+                    <p class="text-gray-700">本项目由 <a href="https://www.li-dao.org/" class="text-primary hover:underline">$Li币团队</a> 运营。$LI 希望建设一个独一无二的社区，我们致力于在中国这样的独裁国家中，促进人权、新闻自由与言论自由。$Li 的社区将伴随 $LI 的成长不断发展，凝聚共识，共同推动这些核心价值的实现。</p>
+                </div>
 
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md mb-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">什么是611Study, 611学制？</h3>
+                    <p class="text-gray-700">"611"学制，指的是一种近年来中国初高中普遍执行的上课模式（早上 6 点到校 ~ 晚上 11 点放学，每周 6 天甚至 7 天）。在一个实行"611"学制的学校上课就意味着每周至少要在学校学习 102 个小时。</p>
+                </div>
 
-    <h4>点击查看<a href="https://docs.google.com/spreadsheets/d/1P48quxwMv9XsYQhXjLOvTRRq8tt3ahJnkbXo4VCxjLc/edit?usp=sharing" target="_blank">全国超时学习学校耻辱名单</a></h4>
-    <h4>点击查看<a href="https://docs.google.com/spreadsheets/d/1xwumayAqvDoATywgzGgOgqXqF4xoVGgumxVQz9CNmkc/edit?usp=sharing" target="_blank">611Study.ICU第二阶段项目：强制学生“自愿”补课学校耻辱名单</a></h4>
-    <h4>点击填写<a href="https://forms.gle/n4w2Kb4hMtDxCTE18" target="_blank">超时学习学校登记问卷</a></h4>
-    <h4>点击填写<a href="https://forms.gle/9w492T7qaVDi7c4t7" target="_blank">611Study.ICU第二阶段项目：强制学生自愿补课学校登记问卷</a></h4>
-    <h4>点击访问<a href="https://github.com/IQAQI233/611Study.ICU" target="_blank">我们的GitHub项目页面</a></h4>
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md mb-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">原则和目的</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>611Study.ICU 是中国不堪重负超时学习学生们的呐喊，我们欢迎其他领域、其他国家的人士加入讨论。</li>
+                        <li>我们欢迎一切积极的、具有建设性意义的建议，倡导成熟、负责任以及有价值的发言。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p><b><a href="https://github.com/IQAQI233/611Study.ICU" target="_blank">611Study</a> 是指“早6点上学，晚11点放学，生病 ICU”。这是中国现在初高中学校的普遍强制要求。无数的初高中生因此承受生理和心理健康的双重折磨。我们希望通过此项目，帮助中国学生们摆脱这种连监狱都不如的作息时间，拥有一个健康快乐的童年。</b></p>
+    <!-- Lists Section -->
+    <section id="lists" class="py-12 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">耻辱名单</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">全国超时学习学校耻辱名单</h3>
+                    <p class="text-gray-700 mb-6">记录全国范围内要求学生超时学习的学校，揭露这些违反教育规定的行为。</p>
+                    <a href="https://docs.google.com/spreadsheets/d/1P48quxwMv9XsYQhXjLOvTRRq8tt3ahJnkbXo4VCxjLc/edit?usp=sharing" class="inline-block bg-primary text-white px-5 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">查看名单</a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">强制学生"自愿"补课学校耻辱名单</h3>
+                    <p class="text-gray-700 mb-6">记录强制学生参加"自愿"补课的学校，揭露这些打着自愿名义的强制行为。</p>
+                    <a href="https://docs.google.com/spreadsheets/d/1xwumayAqvDoATywgzGgOgqXqF4xoVGgumxVQz9CNmkc/edit?usp=sharing" class="inline-block bg-primary text-white px-5 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">查看名单</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h4>请为我们的项目点Star支持我们：</h4>
+    <!-- Action Section -->
+    <section id="action" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">我能做什么？</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <a href="https://forms.gle/n4w2Kb4hMtDxCTE18" class="bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition hover:border-primary">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">填写超时学习学校登记问卷</h3>
+                        <p class="text-gray-700">帮助我们收集更多信息，更新全国超时学习学校耻辱名单。</p>
+                    </a>
+                    
+                    <a href="https://forms.gle/9w492T7qaVDi7c4t7" class="bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition hover:border-primary">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">填写强制"自愿"补课学校登记问卷</h3>
+                        <p class="text-gray-700">帮助我们收集强制学生"自愿"补课的学校信息。</p>
+                    </a>
+                    
+                    <a href="https://github.com/IQAQI233/611Study.ICU/discussions" class="bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition hover:border-primary">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">参与社区讨论</h3>
+                        <p class="text-gray-700">给社区与项目发展提出新的议题和建议。</p>
+                    </a>
+                    
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition hover:border-primary">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">互助式举报</h3>
+                        <p class="text-gray-700">向异地教育局和市长热线等举报超时学习学校，共同促进改变。</p>
+                    </div>
+                </div>
+                
+                <div class="bg-primary bg-opacity-10 rounded-xl p-6 border border-primary border-opacity-30">
+                    <h3 class="text-xl font-bold text-primary mb-3">最重要的行动</h3>
+                    <p class="text-gray-800 font-medium">下午6点钟放学回家。维护你的合法权益，拒绝超时学习。</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div>
+    <!-- GitHub CTA Section -->
+    <section class="py-12 md:py-16 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">请为我们的项目点Star支持我们</h2>
+                <a href="https://github.com/IQAQI233/611Study.ICU" class="inline-flex items-center bg-white text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">
+                    <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub 项目页面
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- License Section -->
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl p-6 shadow-md">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">许可证</h3>
+                <p class="text-gray-700 mb-4">本项目使用 <a href="https://611study.icu/LICENSE" class="text-primary hover:underline">反 996 许可证</a>。此许可证的目的是阻止违反劳动法的公司使用许可证下的软件或代码，并强迫这些公司权衡他们的行为。</p>
+                <p class="text-gray-700">该草案改编自 MIT 许可证，如需更多信息请查看 <a href="https://github.com/kattgu7/Anti-996-License/wiki" class="text-primary hover:underline">Wiki</a>。此许可证旨在与所有主流开源许可证兼容。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="https://611study.icu/logo.svg" alt="611Study.ICU" class="h-8 w-auto">
+                        <span class="ml-3 text-xl font-bold">611Study.ICU</span>
+                    </div>
+                    <p class="mt-2 text-gray-300 text-sm">本项目基于 <a href="https://996.icu/#/zh_CN" class="underline hover:text-primary">996.ICU</a>，程序员对于996工作制的呐喊。</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#about" class="text-gray-300 hover:text-primary text-sm">关于项目</a>
+                    <a href="#lists" class="text-gray-300 hover:text-primary text-sm">耻辱名单</a>
+                    <a href="#action" class="text-gray-300 hover:text-primary text-sm">行动起来</a>
+                    <a href="https://github.com/IQAQI233/611Study.ICU" class="text-gray-300 hover:text-primary text-sm">GitHub</a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                <p>© 2025 611Study.ICU - 为中国学生争取合理学时</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-         <!-- Place this tag where you want the button to render. -->
-        <a class="github-button" href="https://github.com/IQAQI233/611Study.ICU" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star IQAQI233/611Study.ICU on GitHub" style="height: 40px;">Star</a>
-    </div>
-    
-   
-    <p>本项目基于 <a href="https://996.icu/#/zh_CN" target="_blank">996.ICU</a>，程序员对于996工作制的呐喊。</p>
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-    
-
-
-    <h2>什么是611Study, 611学制？</h2>
-    <p>“611”学制，指的是一种近年来中国初高中普遍执行的上课模式（早上 6 点到校 ~ 晚上 11 点放学，每周 6 天甚至 7 天）。在一个实行“611”学制的学校上课就意味着每周至少要在学校学习 102 个小时。</p>
-
-    <h2>我能做什么？</h2>
-    <ul>
-        <li>填写<a href="https://forms.gle/n4w2Kb4hMtDxCTE18" target="_blank">超时学习学校登记问卷</a>更新<a href="https://docs.google.com/spreadsheets/d/1P48quxwMv9XsYQhXjLOvTRRq8tt3ahJnkbXo4VCxjLc/edit?usp=sharing" target="_blank">全国超时学习学校耻辱名单</a></li>
-        <li>互助式向异地教育局和市长热线等举报<a href="https://docs.google.com/spreadsheets/d/1P48quxwMv9XsYQhXjLOvTRRq8tt3ahJnkbXo4VCxjLc/edit?usp=sharing" target="_blank">全国超时学习学校耻辱名单</a>中的超时学习学校。</li>
-        <li>给社区与项目发展提出新的<a href="https://github.com/IQAQI233/611Study.ICU/discussions">议题</a>。</li>
-        <li>下午6点钟放学回家。</li>
-        <li>互助式举报填写<a href="https://forms.gle/n4w2Kb4hMtDxCTE18" target="_blank">超时学习学校登记问卷</a></li>
-    </ul>
-
-    <p>感谢996.ICU的启发和其项目框架</p>
-
-
-    <h2>原则和目的</h2>
-    <ul>
-        <li>611Study.ICU 是中国不堪重负超时学习学生们的呐喊，我们欢迎其他领域、其他国家的人士加入讨论。</li>
-        <li>我们欢迎一切积极的、具有建设性意义的建议，倡导成熟、负责任以及有价值的发言。</li>
-    </ul>
-
-    <h2>扩大影响</h2>
-    <p>请自由发挥你的能力，调整格式、添加内容或修正语法。不过要注意，添加过多的翻译版本并非我们的目标。</p>
-
-    <h2>License</h2>
-    <p><a href="LICENSE" target="_blank">反 996 许可证</a></p>
-    <ul>
-        <li>此许可证的目的是阻止违反劳动法的公司使用许可证下的软件或代码，并强迫这些公司权衡他们的行为。</li>
-        <li>在此处查看反 996 许可证下的<a href="awesomelist/README.md" target="_blank">完整项目列表</a></li>
-        <li>该草案改编自 MIT 许可证，如需更多信息请查看 <a href="https://github.com/kattgu7/Anti-996-License/wiki" target="_blank">Wiki</a>。此许可证旨在与所有主流开源许可证兼容。</li>
-        <li>如果你是法律专业人士，或是任何愿意为未来版本做出直接贡献的人，请访问 <a href="https://github.com/kattgu7/Anti-996-License" target="_blank">Anti-996-License-1.0</a>。感谢你的帮助。</li>
-    </ul>
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
+
